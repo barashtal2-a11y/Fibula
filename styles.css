@@ -58,14 +58,14 @@ a {
   z-index: 0;
   overflow: hidden;
   background: radial-gradient(ellipse at center, var(--bg) 0%, var(--bg-deep) 80%);
-  animation: trip 14s linear infinite;
+  animation: trip 32s linear infinite;
 }
 
 .blob {
   position: absolute;
   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-  filter: blur(65px);
-  opacity: 0.65;
+  filter: blur(85px);
+  opacity: 0.55;
   will-change: transform, border-radius;
 }
 
@@ -75,7 +75,7 @@ a {
   top: -12%;
   left: -12%;
   background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
-  animation: drift1 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: drift1 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .blob-2 {
@@ -84,7 +84,7 @@ a {
   bottom: -20%;
   right: -15%;
   background: radial-gradient(circle, var(--magenta) 0%, transparent 70%);
-  animation: drift2 13s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: drift2 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .blob-3 {
@@ -94,12 +94,12 @@ a {
   top: 30%;
   left: 50%;
   background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);
-  animation: drift3 9s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: drift3 21s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 @keyframes trip {
   0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(-18deg); }
+  50% { filter: hue-rotate(-10deg); }
   100% { filter: hue-rotate(0deg); }
 }
 
@@ -168,7 +168,7 @@ main, header, footer {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: flow 3.5s ease-in-out infinite;
+  animation: flow 8s ease-in-out infinite;
 }
 
 @keyframes flow {
@@ -240,10 +240,10 @@ main, header, footer {
   transform: translate(-50%, -50%);
   background: repeating-conic-gradient(
     from 0deg,
-    rgba(255, 159, 28, 0.12) 0deg 6deg,
+    rgba(255, 159, 28, 0.05) 0deg 6deg,
     transparent 6deg 18deg
   );
-  animation: spin-sun 30s linear infinite;
+  animation: spin-sun 110s linear infinite;
   pointer-events: none;
   z-index: 0;
 }
@@ -309,12 +309,12 @@ main, header, footer {
   letter-spacing: 0.02em;
   color: var(--text);
   position: relative;
-  animation: breathe 2.5s ease-in-out infinite;
+  animation: breathe 5s ease-in-out infinite;
 }
 
 @keyframes breathe {
   0%, 100% { text-shadow: 0 0 40px rgba(255, 210, 63, 0.35); }
-  50% { text-shadow: 0 0 90px rgba(255, 56, 100, 0.65); }
+  50% { text-shadow: 0 0 55px rgba(255, 56, 100, 0.4); }
 }
 
 @media (prefers-reduced-motion: reduce) {
