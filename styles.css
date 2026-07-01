@@ -8,8 +8,8 @@
   --text: #fff3e6;
   --text-dim: #e8a87c;
   --border: rgba(255, 210, 63, 0.25);
-  --font-display: "Syne", sans-serif;
-  --font-body: "Space Grotesk", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
 }
 
 * {
@@ -54,38 +54,28 @@ a {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, var(--bg) 0%, var(--bg-deep) 80%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 45%, #3a1006 75%, var(--bg-deep) 100%);
 }
 
-.blob {
+.horizon-glow {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.4;
+  left: 50%;
+  bottom: -15%;
+  width: 140vmax;
+  height: 90vmax;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.35) 0%, rgba(255, 56, 100, 0.12) 40%, transparent 70%);
+  filter: blur(60px);
 }
 
-.blob-1 {
-  width: 46vmax;
-  height: 46vmax;
-  top: -14%;
-  left: -14%;
-  background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
-}
-
-.blob-2 {
-  width: 50vmax;
-  height: 50vmax;
-  bottom: -20%;
-  right: -16%;
-  background: radial-gradient(circle, var(--magenta) 0%, transparent 70%);
-}
-
-.blob-3 {
-  width: 34vmax;
-  height: 34vmax;
-  top: 32%;
-  left: 48%;
-  background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);
+.topo {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900'%3E%3Cpath d='M-50,60 C150,20 300,100 500,60 C700,20 850,100 1050,60 C1200,30 1350,90 1490,60' stroke='%23ffd23f' stroke-width='1.5' fill='none' opacity='0.35'/%3E%3Cpath d='M-50,160 C180,110 330,190 540,150 C740,110 900,190 1100,150 C1250,120 1380,180 1490,150' stroke='%23ff9f1c' stroke-width='1.5' fill='none' opacity='0.32'/%3E%3Cpath d='M-50,270 C160,330 340,220 560,270 C760,320 920,220 1120,270 C1260,300 1380,240 1490,270' stroke='%23ff6b35' stroke-width='1.5' fill='none' opacity='0.3'/%3E%3Cpath d='M-50,380 C200,320 380,420 580,370 C780,320 940,420 1140,370 C1270,340 1390,400 1490,370' stroke='%23ffd23f' stroke-width='1.5' fill='none' opacity='0.26'/%3E%3Cpath d='M-50,490 C170,540 350,440 570,490 C770,540 930,440 1130,490 C1270,520 1390,460 1490,490' stroke='%23ff3864' stroke-width='1.5' fill='none' opacity='0.22'/%3E%3Cpath d='M-50,610 C190,550 370,650 580,600 C780,550 940,650 1140,600 C1270,570 1390,630 1490,600' stroke='%23ff9f1c' stroke-width='1.5' fill='none' opacity='0.2'/%3E%3Cpath d='M-50,730 C160,780 340,680 560,730 C760,780 920,680 1120,730 C1260,760 1380,700 1490,730' stroke='%23ff6b35' stroke-width='1.5' fill='none' opacity='0.16'/%3E%3Cpath d='M-50,840 C200,790 380,870 580,830 C780,790 940,870 1140,830 C1270,810 1390,850 1490,830' stroke='%23ffd23f' stroke-width='1.5' fill='none' opacity='0.14'/%3E%3C/svg%3E");
 }
 
 /* ---------- layout scaffolding ---------- */
@@ -224,7 +214,9 @@ main, header, footer {
 /* ---------- manifesto ---------- */
 
 .manifesto p {
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
   line-height: 1.7;
   color: var(--text-dim);
   margin-bottom: 1.25rem;
