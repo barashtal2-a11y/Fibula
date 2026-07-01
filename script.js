@@ -2,7 +2,7 @@ function renderLinks(section, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const links = FIBULA_LINKS.filter((link) => link.section === section);
+  const links = FIBULA_LINKS.filter((link) => link.section === section && !link.follow);
 
   links.forEach((link) => {
     const a = document.createElement("a");
@@ -15,8 +15,33 @@ function renderLinks(section, containerId) {
   });
 }
 
+function renderFollowCards(section, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const links = FIBULA_LINKS.filter((link) => link.section === section && link.follow);
+
+  links.forEach((link) => {
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.className = "follow-card";
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.innerHTML = `
+      <span class="follow-card-avatar"></span>
+      <span class="follow-card-text">
+        <span class="follow-card-name">${link.name}</span>
+        <span class="follow-card-handle">${link.handle || ""}</span>
+      </span>
+      <span class="follow-card-arrow">↗</span>
+    `;
+    container.appendChild(a);
+  });
+}
+
 renderLinks("listen", "listen-links");
 renderLinks("connect", "connect-links");
+renderFollowCards("connect", "follow-cards");
 
 const bookingEmailEl = document.getElementById("booking-email");
 if (bookingEmailEl) {

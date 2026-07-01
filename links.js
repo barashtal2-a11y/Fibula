@@ -11,7 +11,9 @@ const FIBULA_LINKS = [
     name: "Instagram",
     url: "https://www.instagram.com/talbarash/",
     section: "connect",
-    icon: "instagram"
+    icon: "instagram",
+    handle: "@talbarash",
+    follow: true
   }
   // Future additions, e.g.:
   // { name: "Spotify", url: "https://open.spotify.com/artist/...", section: "listen", icon: "spotify" },
