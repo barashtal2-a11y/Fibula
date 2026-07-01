@@ -8,7 +8,7 @@
   --text: #fff3e6;
   --text-dim: #e8a87c;
   --border: rgba(255, 210, 63, 0.25);
-  --font-display: "Fraunces", serif;
+  --font-display: "Playfair Display", serif;
   --font-body: "Work Sans", sans-serif;
 }
 
@@ -214,9 +214,7 @@ main, header, footer {
 /* ---------- manifesto ---------- */
 
 .manifesto p {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-dim);
   margin-bottom: 1.25rem;
