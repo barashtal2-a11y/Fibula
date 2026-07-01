@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibula — Electronic Music from Haifa</title>
+<meta name="description" content="Fibula is an electronic musician based in Haifa, Israel. Weird sounds. A new approach. The journey is the point.">
+
+<meta property="og:title" content="Fibula">
+<meta property="og:description" content="Weird sounds. A new approach. The journey is the point.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<div class="blob-field" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="hero" id="top">
+  <nav class="nav">
+    <span class="nav-mark">FIBULA</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#listen">Listen</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-content">
+    <p class="hero-tag">Haifa, Israel</p>
+    <h1 class="glitch" data-text="FIBULA">FIBULA</h1>
+    <p class="hero-tagline">Weird sounds. A new approach. The journey is the point.</p>
+    <a href="#listen" class="cta">Enter the sound ↓</a>
+  </div>
+</header>
+
+<main>
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <h2 class="section-title">Manifesto</h2>
+      <div class="manifesto">
+        <p>Fibula doesn't chase a finished sound. It chases the moment before one — the glitch, the misfire,
+          the frequency that wasn't supposed to work but does.</p>
+        <p>Every track starts from the wrong question. What if the drum was the melody? What if the silence
+          was the drop? There's no map for this — just a direction, and a willingness to get lost in it.</p>
+        <p>There is no destination here. No genre to arrive at, no sound to perfect and repeat forever.
+          The <em>journey</em> is the point — the constant rebuilding, the refusal to settle, the noise
+          that becomes music somewhere along the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section listen" id="listen">
+    <div class="section-inner">
+      <h2 class="section-title">Listen</h2>
+      <p class="section-lead">Start here. More stops along the way, soon.</p>
+      <div class="platform-grid" id="listen-links"></div>
+    </div>
+  </section>
+
+  <section class="section connect" id="connect">
+    <div class="section-inner">
+      <h2 class="section-title">Connect</h2>
+      <p class="section-lead">For bookings, collaborations, or weird ideas.</p>
+      <div class="platform-grid" id="connect-links"></div>
+      <a class="booking-email" id="booking-email" href="#">Loading…</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Fibula — Haifa, Israel</p>
+</footer>
+
+<script src="links.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
