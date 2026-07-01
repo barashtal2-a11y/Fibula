@@ -58,7 +58,7 @@ a {
   z-index: 0;
   overflow: hidden;
   background: radial-gradient(ellipse at center, var(--bg) 0%, var(--bg-deep) 80%);
-  animation: trip 50s linear infinite;
+  animation: trip 14s linear infinite;
 }
 
 .blob {
@@ -75,7 +75,7 @@ a {
   top: -12%;
   left: -12%;
   background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
-  animation: drift1 21s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: drift1 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .blob-2 {
@@ -84,7 +84,7 @@ a {
   bottom: -20%;
   right: -15%;
   background: radial-gradient(circle, var(--magenta) 0%, transparent 70%);
-  animation: drift2 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: drift2 13s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .blob-3 {
@@ -94,12 +94,12 @@ a {
   top: 30%;
   left: 50%;
   background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);
-  animation: drift3 17s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: drift3 9s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 @keyframes trip {
   0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(35deg); }
+  50% { filter: hue-rotate(-18deg); }
   100% { filter: hue-rotate(0deg); }
 }
 
@@ -168,7 +168,7 @@ main, header, footer {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: flow 9s ease-in-out infinite;
+  animation: flow 3.5s ease-in-out infinite;
 }
 
 @keyframes flow {
@@ -228,9 +228,38 @@ main, header, footer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.sunburst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130vmax;
+  height: 130vmax;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 159, 28, 0.12) 0deg 6deg,
+    transparent 6deg 18deg
+  );
+  animation: spin-sun 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sunburst { animation: none; }
+}
+
+@keyframes spin-sun {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -280,12 +309,12 @@ main, header, footer {
   letter-spacing: 0.02em;
   color: var(--text);
   position: relative;
-  animation: breathe 6s ease-in-out infinite;
+  animation: breathe 2.5s ease-in-out infinite;
 }
 
 @keyframes breathe {
   0%, 100% { text-shadow: 0 0 40px rgba(255, 210, 63, 0.35); }
-  50% { text-shadow: 0 0 70px rgba(255, 56, 100, 0.5); }
+  50% { text-shadow: 0 0 90px rgba(255, 56, 100, 0.65); }
 }
 
 @media (prefers-reduced-motion: reduce) {
