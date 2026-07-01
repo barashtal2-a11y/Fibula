@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibula — Glassmorphism Preview</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-glass.css">
+</head>
+<body>
+
+<a href="index.html" class="preview-banner">Preview: Glassmorphism — click to return to the live site</a>
+
+<div class="backdrop">
+  <img src="images/hero.jpg" alt="" aria-hidden="true">
+  <div class="backdrop-tint"></div>
+</div>
+
+<nav class="nav">
+  <span class="nav-mark">FIBULA</span>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#listen">Listen</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="glass hero-card">
+    <span class="tag">Haifa, Israel</span>
+    <h1>FIBULA</h1>
+    <p class="tagline">Just a simple man making strange, colorful electronic beats.</p>
+    <a href="#listen" class="glass-btn">Listen now ↓</a>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="about">
+    <div class="glass about-card">
+      <div class="about-photo">
+        <img src="images/portrait.jpg" alt="Close portrait of Fibula focused on his face while performing">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Fibula, also known as Barash, is a psychedelic music producer based in the north of Israel, in Haifa.</p>
+        <p>Falling in love with electronic music was a one-way ticket. That sound gave him a spark, and he tries
+          to bring that same energy to every track he makes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="listen">
+    <div class="glass">
+      <h2>Listen</h2>
+      <p class="lead">Start here. More stops along the way, soon.</p>
+      <div id="listen-links" class="link-row"></div>
+      <div class="player-shell">
+        <iframe
+          title="Fibula on SoundCloud"
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          loading="lazy"
+          src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fuser831416870&color=%23ff3864&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="connect">
+    <div class="glass">
+      <h2>Connect</h2>
+      <p class="lead">For bookings, collaborations, or weird ideas.</p>
+      <a class="glass-btn glass-btn-solid" id="booking-email" href="#">Loading…</a>
+      <div id="follow-cards" class="link-row"></div>
+      <div id="connect-links" class="link-row"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Fibula — Haifa, Israel</p>
+</footer>
+
+<script src="links.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
