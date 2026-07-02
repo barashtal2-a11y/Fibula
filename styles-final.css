@@ -1,0 +1,301 @@
+:root {
+  --gold: #ffd23f;
+  --coral: #ff3864;
+  --rust: #ff6b35;
+  --text: #fff8ef;
+  --text-dim: #d8c3b8;
+  --font-display: "Nunito", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #140a12;
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.preview-banner {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: block;
+  text-align: center;
+  padding: 0.6rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(60px) saturate(1.7) brightness(0.5);
+  transform: scale(1.25);
+}
+
+.backdrop-tint {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(255, 107, 53, 0.25), transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(255, 56, 100, 0.25), transparent 55%),
+    linear-gradient(180deg, rgba(20, 10, 18, 0.55), rgba(20, 10, 18, 0.92) 70%, #140a12 100%);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem clamp(1.5rem, 5vw, 4rem);
+}
+
+.nav-mark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.nav a:hover { color: var(--gold); }
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 1.5rem;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  gap: 1.25rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+
+.cell {
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.cell-label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.9rem;
+}
+
+.cell-hero {
+  grid-column: span 3;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+}
+
+.cell-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.98;
+  background: linear-gradient(90deg, var(--gold), var(--coral));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.25rem;
+}
+
+.tagline {
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--gold), var(--coral));
+  color: #2a0a10;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(255, 56, 100, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(255, 56, 100, 0.4);
+}
+
+.cell-photo {
+  grid-column: span 1;
+  grid-row: span 2;
+  padding: 0;
+}
+
+.cell-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cell-about {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cell-about p {
+  color: var(--text-dim);
+  line-height: 1.65;
+  font-size: 0.98rem;
+}
+
+.cell-listen {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.cell-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.1rem;
+}
+
+.platform-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.88rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.platform-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.icon-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.cell-player {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cell-connect {
+  grid-column: span 2;
+}
+
+.cell-email {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--gold), var(--coral));
+  color: #2a0a10;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  box-shadow: 0 12px 30px rgba(255, 56, 100, 0.3);
+}
+
+.follow-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.follow-card-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, var(--gold), var(--coral), var(--rust), var(--gold));
+  flex-shrink: 0;
+}
+
+.follow-card-text { display: flex; flex-direction: column; }
+.follow-card-name { font-size: 0.72rem; color: var(--text-dim); }
+.follow-card-handle { font-size: 0.9rem; font-weight: 600; }
+.follow-card-arrow { margin-left: 0.3rem; color: var(--gold); }
+
+.bento-footer {
+  text-align: center;
+  padding: 2rem 0 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 800px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .cell-hero, .cell-listen, .cell-connect, .cell-about { grid-column: span 2; }
+  .cell-photo { grid-column: span 1; grid-row: span 2; }
+}
+
+@media (max-width: 560px) {
+  .bento { grid-template-columns: 1fr; }
+  .cell-hero, .cell-photo, .cell-about, .cell-listen, .cell-connect {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+  .cell-photo { aspect-ratio: 4/3; }
+}
