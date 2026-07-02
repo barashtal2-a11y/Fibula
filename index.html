@@ -13,99 +13,87 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css?v=12">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 
-<div class="noise-overlay" aria-hidden="true"></div>
-
-<div class="blob-field" aria-hidden="true">
-  <div class="horizon-glow"></div>
-  <div class="topo"></div>
+<div class="backdrop">
+  <img src="images/hero.jpg" alt="" aria-hidden="true">
+  <div class="backdrop-tint"></div>
 </div>
 
-<header class="hero" id="top">
-  <nav class="nav">
-    <span class="nav-mark">FIBULA</span>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#listen">Listen</a></li>
-      <li><a href="#connect">Connect</a></li>
-    </ul>
-  </nav>
+<nav class="nav">
+  <ul>
+    <li><a href="#listen">Listen</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
 
-  <div class="hero-body">
-    <div class="hero-content">
-      <h1 class="hero-title">FIBULA</h1>
-      <p class="hero-tagline">Just a simple man making strange, colorful electronic beats.</p>
-      <a href="#listen" class="cta">Enter the sound ↓</a>
+<div class="wrap">
+  <div class="bento">
+
+    <div class="cell glass cell-hero">
+      <span class="tag">Haifa, Israel</span>
+      <h1>FIBULA</h1>
+      <p class="tagline">Just a simple man making strange, colorful electronic beats.</p>
+      <a href="#listen" class="btn">Listen now ↓</a>
     </div>
 
-    <div class="photo-frame hero-photo">
-      <img src="images/hero.jpg" alt="Fibula performing live behind a Pioneer DJ mixer, lit in pink and cyan stage lighting" loading="eager">
+    <div class="cell glass cell-photo">
+      <img src="images/hero.jpg" alt="Fibula performing live behind a Pioneer DJ mixer, lit in pink and cyan stage lighting">
     </div>
+
+    <div class="cell glass cell-about">
+      <span class="cell-label">About</span>
+      <p>Fibula, also known as Barash, is a psychedelic music producer from the north of Israel. Falling for
+        electronic music was a one-way ticket — now he tries to bring that same spark to every track.</p>
+    </div>
+
+    <div class="cell glass cell-listen" id="listen">
+      <span class="cell-label">Listen</span>
+      <div id="listen-links" class="cell-links"></div>
+      <div class="track">
+        <span class="track-name">Grooveattack</span>
+        <audio controls preload="none" src="audio/grooveattack.mp3"></audio>
+      </div>
+      <div class="track">
+        <span class="track-name">UTRT</span>
+        <audio controls preload="none" src="audio/utrt.mp3"></audio>
+      </div>
+    </div>
+
+    <div class="cell glass cell-connect" id="connect">
+      <span class="cell-label">Connect</span>
+      <a class="cell-email" id="booking-email" href="#">Loading…</a>
+      <div id="follow-cards" class="cell-links"></div>
+      <div id="connect-links" class="cell-links"></div>
+    </div>
+
+    <div class="cell glass cell-newsletter">
+      <span class="cell-label">Join the list</span>
+      <p class="newsletter-lead">Be the first to know about new tracks and shows. No spam, just music.</p>
+      <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="New Fibula mailing list signup">
+        <input type="email" name="email" class="newsletter-input" placeholder="you@email.com" required>
+        <button type="submit" class="newsletter-btn">Join</button>
+      </form>
+    </div>
+
+    <div class="cell glass cell-shows">
+      <span class="cell-label">Upcoming shows</span>
+      <p class="shows-empty">No shows announced yet — join the list to be the first to know.</p>
+    </div>
+
   </div>
 
-  <p class="hero-location">Haifa, Israel</p>
-</header>
+  <footer class="bento-footer">
+    <p>&copy; <span id="year"></span> Fibula — Haifa, Israel</p>
+  </footer>
+</div>
 
-<main>
-  <section class="section about" id="about">
-    <div class="section-inner about-inner">
-      <div class="photo-frame about-photo">
-        <img src="images/portrait.jpg" alt="Close portrait of Fibula focused on his face while performing" loading="lazy">
-      </div>
-      <div class="about-text">
-        <h2 class="section-title">About Me</h2>
-        <div class="manifesto">
-          <p>Fibula, also known as Barash, is a psychedelic music producer based in the north of Israel, in Haifa.</p>
-          <p>Falling in love with electronic music was a one-way ticket. That sound gave me a spark, and I try
-            to bring that same energy to every track I make.</p>
-          <p>Join me on a <em>journey</em> of unique sound and experience — weird, unexpected, and worth it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section listen" id="listen">
-    <div class="section-inner">
-      <h2 class="section-title">Listen</h2>
-      <p class="section-lead">Start here. More stops along the way, soon.</p>
-      <div class="platform-grid" id="listen-links"></div>
-      <p class="player-caption">Latest on SoundCloud</p>
-      <div class="player-frame">
-        <iframe
-          title="Fibula on SoundCloud"
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          loading="lazy"
-          src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fuser831416870&color=%23ff3864&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="section connect" id="connect">
-    <div class="section-inner">
-      <h2 class="section-title">Connect</h2>
-      <p class="section-lead">For bookings, collaborations, or weird ideas.</p>
-      <a class="booking-cta" id="booking-email" href="#">Loading…</a>
-      <div class="follow-cards" id="follow-cards"></div>
-      <div class="platform-grid" id="connect-links"></div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <p>&copy; <span id="year"></span> Fibula — Haifa, Israel</p>
-</footer>
-
-<script src="links.js?v=12"></script>
-<script src="script.js?v=12"></script>
+<script src="links.js?v=13"></script>
+<script src="script.js?v=13"></script>
 </body>
 </html>
