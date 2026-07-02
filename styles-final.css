@@ -295,6 +295,78 @@ a { color: inherit; text-decoration: none; }
 .follow-card-handle { font-size: 0.9rem; font-weight: 600; }
 .follow-card-arrow { margin-left: 0.3rem; color: var(--gold); }
 
+.cell-newsletter {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter-lead {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 10rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-dim);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.newsletter-btn {
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--gold), var(--coral));
+  color: #2a0a10;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(255, 56, 100, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.newsletter-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cell-shows {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shows-empty {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .bento-footer {
   text-align: center;
   padding: 2rem 0 0.5rem;
@@ -304,13 +376,13 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 800px) {
   .bento { grid-template-columns: repeat(2, 1fr); }
-  .cell-hero, .cell-listen, .cell-connect, .cell-about { grid-column: span 2; }
+  .cell-hero, .cell-listen, .cell-connect, .cell-about, .cell-newsletter, .cell-shows { grid-column: span 2; }
   .cell-photo { grid-column: span 1; grid-row: span 2; }
 }
 
 @media (max-width: 560px) {
   .bento { grid-template-columns: 1fr; }
-  .cell-hero, .cell-photo, .cell-about, .cell-listen, .cell-connect {
+  .cell-hero, .cell-photo, .cell-about, .cell-listen, .cell-connect, .cell-newsletter, .cell-shows {
     grid-column: span 1;
     grid-row: auto;
   }
