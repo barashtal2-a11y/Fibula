@@ -43,6 +43,53 @@ a { color: inherit; text-decoration: none; }
     linear-gradient(180deg, rgba(20, 10, 18, 0.6), rgba(20, 10, 18, 0.92) 70%, #140a12 100%);
 }
 
+.spirals {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.spiral {
+  position: absolute;
+  width: 46vw;
+  max-width: 640px;
+  min-width: 320px;
+  height: auto;
+  opacity: 0.16;
+}
+
+.spiral-1 {
+  top: -12%;
+  left: -10%;
+  animation: spin-cw 150s linear infinite;
+}
+
+.spiral-2 {
+  bottom: -16%;
+  right: -12%;
+  animation: spin-ccw 190s linear infinite;
+}
+
+@keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@media (max-width: 800px) {
+  .spiral { opacity: 0.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spiral { animation: none; }
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -349,6 +396,25 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.5;
 }
 
+.cell-collab {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.75rem 2rem;
+}
+
+.collab-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  max-width: 34rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
 .bento-footer {
   text-align: center;
   padding: 2rem 0 0.5rem;
@@ -358,13 +424,13 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 800px) {
   .bento { grid-template-columns: repeat(2, 1fr); }
-  .cell-hero, .cell-listen, .cell-connect, .cell-about, .cell-newsletter, .cell-shows { grid-column: span 2; }
+  .cell-hero, .cell-listen, .cell-connect, .cell-about, .cell-newsletter, .cell-shows, .cell-collab { grid-column: span 2; }
   .cell-photo { grid-column: span 1; grid-row: span 2; }
 }
 
 @media (max-width: 560px) {
   .bento { grid-template-columns: 1fr; }
-  .cell-hero, .cell-photo, .cell-about, .cell-listen, .cell-connect, .cell-newsletter, .cell-shows {
+  .cell-hero, .cell-photo, .cell-about, .cell-listen, .cell-connect, .cell-newsletter, .cell-shows, .cell-collab {
     grid-column: span 1;
     grid-row: auto;
   }
