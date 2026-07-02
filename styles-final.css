@@ -42,7 +42,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(60px) saturate(1.7) brightness(0.5);
+  filter: blur(60px) saturate(0.5) sepia(0.5) brightness(0.4);
   transform: scale(1.25);
 }
 
@@ -50,9 +50,9 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 10%, rgba(255, 107, 53, 0.25), transparent 55%),
-    radial-gradient(ellipse at 85% 80%, rgba(255, 56, 100, 0.25), transparent 55%),
-    linear-gradient(180deg, rgba(20, 10, 18, 0.55), rgba(20, 10, 18, 0.92) 70%, #140a12 100%);
+    radial-gradient(ellipse at 20% 10%, rgba(255, 210, 63, 0.35), transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(255, 56, 100, 0.35), transparent 55%),
+    linear-gradient(180deg, rgba(20, 10, 18, 0.6), rgba(20, 10, 18, 0.92) 70%, #140a12 100%);
 }
 
 .nav {
