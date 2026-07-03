@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibula — Electronic Music from Haifa (Links)</title>
+<meta name="description" content="Fibula is an electronic musician based in Haifa, Israel. Just a simple man making strange, colorful electronic beats.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="link.css?v=1">
+</head>
+<body>
+
+<main class="col">
+
+  <header class="profile">
+    <div class="avatar"><img src="images/hero.jpg" alt="Fibula"></div>
+    <h1>Fibula</h1>
+    <span class="loc">Haifa, Israel · Electronic music</span>
+    <p class="tagline">Just a simple man making strange, colorful electronic beats.</p>
+  </header>
+
+  <section class="card" id="listen">
+    <span class="card-label">Listen</span>
+    <div class="track">
+      <span class="track-name">Grooveattack</span>
+      <audio controls preload="metadata" src="audio/grooveattack.mp3"></audio>
+    </div>
+    <div class="track">
+      <span class="track-name">UTRT</span>
+      <audio controls preload="metadata" src="audio/utrt.mp3"></audio>
+    </div>
+  </section>
+
+  <div id="listen-links" class="stack"></div>
+  <div id="follow-cards" class="stack"></div>
+  <div id="connect-links" class="stack"></div>
+
+  <a class="link-btn email-btn" id="booking-email" href="#">Loading…</a>
+
+  <section class="card">
+    <span class="card-label">Join the list</span>
+    <p class="lead">Be the first to know about new tracks and shows. No spam, just music.</p>
+    <form class="signup" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New Fibula mailing list signup">
+      <input type="email" name="email" class="signup-input" placeholder="you@email.com" required>
+      <button type="submit" class="signup-btn">Join</button>
+    </form>
+  </section>
+
+  <a class="link-btn collab-btn" href="mailto:Barashmusic03@gmail.com?subject=Let%27s%20collaborate">
+    <span class="link-btn-title">Collaborate</span>
+    <span class="link-btn-sub">Producer, vocalist, visual artist? Let's make something weird.</span>
+  </a>
+
+  <footer class="foot">
+    <p>&copy; <span id="year"></span> Fibula — Haifa, Israel</p>
+  </footer>
+
+</main>
+
+<script src="links.js?v=16"></script>
+<script src="script.js?v=16"></script>
+</body>
+</html>

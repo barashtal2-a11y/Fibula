@@ -1,0 +1,198 @@
+:root {
+  --ink: #efe6d6;
+  --ink-dim: #b6a891;
+  --clay: #c98a5c;
+  --clay-deep: #a5663f;
+  --blue: #7f9aa4;
+  --line: rgba(239, 230, 214, 0.14);
+  --card: rgba(239, 230, 214, 0.055);
+  --font-body: "Work Sans", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-color: #17130f;
+  background-image:
+    radial-gradient(90% 55% at 50% -8%, #27353c 0%, transparent 60%),
+    radial-gradient(90% 40% at 50% 108%, #3a2a1c 0%, transparent 60%),
+    linear-gradient(180deg, #1b2225 0%, #191614 52%, #16110d 100%);
+  background-attachment: fixed;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- single centered column ---------- */
+.col {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* ---------- profile ---------- */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.avatar {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--clay), var(--blue));
+  margin-bottom: 1.1rem;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 28%;
+  filter: saturate(0.7) sepia(0.25) brightness(0.95);
+  border: 3px solid #17130f;
+}
+.profile h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+.loc {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.75rem;
+}
+.tagline {
+  font-size: 0.98rem;
+  color: var(--ink-dim);
+  line-height: 1.5;
+  max-width: 26rem;
+}
+
+/* ---------- uniform stacked buttons ---------- */
+.stack { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.link-btn,
+.platform-link,
+.follow-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 58px;
+  padding: 0.9rem 1.25rem;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.link-btn:hover,
+.platform-link:hover,
+.follow-card:hover {
+  transform: translateY(-2px);
+  background: rgba(201, 138, 92, 0.16);
+  border-color: rgba(201, 138, 92, 0.5);
+}
+
+/* platform link (SoundCloud) */
+.platform-link { gap: 0.55rem; }
+.icon-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--clay); }
+
+/* follow card (Instagram) — normalize into a uniform button */
+.follow-card { gap: 0.6rem; }
+.follow-card-avatar {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: conic-gradient(from 200deg, var(--clay), var(--blue), var(--clay));
+  flex-shrink: 0;
+}
+.follow-card-text { display: flex; flex-direction: row; align-items: baseline; gap: 0.4rem; }
+.follow-card-name { font-size: 0.72rem; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.08em; }
+.follow-card-handle { font-size: 0.98rem; font-weight: 600; }
+.follow-card-arrow { color: var(--clay); margin-left: 0.15rem; }
+
+/* email button */
+.email-btn { color: var(--ink); }
+
+/* collab — two-line button */
+.collab-btn { flex-direction: column; gap: 0.25rem; padding: 1.1rem 1.25rem; }
+.link-btn-title {
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); font-weight: 700;
+}
+.link-btn-sub { font-size: 0.9rem; font-weight: 500; color: var(--ink-dim); line-height: 1.4; }
+
+/* ---------- cards (players, newsletter) ---------- */
+.card {
+  width: 100%;
+  padding: 1.4rem;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+.card-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.9rem;
+  text-align: center;
+}
+
+.track {
+  background: rgba(20, 16, 12, 0.4);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+}
+.track + .track { margin-top: 0.7rem; }
+.track-name { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.5rem; }
+.track audio { width: 100%; height: 34px; display: block; }
+
+/* newsletter */
+.lead { color: var(--ink-dim); font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem; text-align: center; }
+.signup { display: flex; gap: 0.5rem; }
+.signup-input {
+  flex: 1; min-width: 0;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(20, 16, 12, 0.4);
+  border: 1px solid rgba(239, 230, 214, 0.22);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+.signup-input::placeholder { color: var(--ink-dim); }
+.signup-input:focus { outline: none; border-color: var(--clay); }
+.signup-btn {
+  font-family: var(--font-body); font-weight: 700;
+  background: linear-gradient(180deg, var(--clay), var(--clay-deep));
+  color: #1c1410; border: none;
+  padding: 0.7rem 1.35rem; border-radius: 999px;
+  font-size: 0.9rem; cursor: pointer;
+  transition: transform 0.18s ease;
+}
+.signup-btn:hover { transform: translateY(-2px); }
+
+/* ---------- footer ---------- */
+.foot {
+  text-align: center;
+  padding-top: 1.25rem;
+  color: var(--ink-dim);
+  font-size: 0.78rem;
+}
