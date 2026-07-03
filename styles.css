@@ -63,13 +63,13 @@ a { color: inherit; text-decoration: none; }
 .spiral-1 {
   top: -12%;
   left: -10%;
-  animation: spin-cw 150s linear infinite;
+  animation: spin-cw 55s linear infinite, breathe-1 9s ease-in-out infinite;
 }
 
 .spiral-2 {
   bottom: -16%;
   right: -12%;
-  animation: spin-ccw 190s linear infinite;
+  animation: spin-ccw 70s linear infinite, breathe-2 11s ease-in-out infinite;
 }
 
 @keyframes spin-cw {
@@ -80,6 +80,16 @@ a { color: inherit; text-decoration: none; }
 @keyframes spin-ccw {
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
+}
+
+@keyframes breathe-1 {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.22; }
+}
+
+@keyframes breathe-2 {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.11; }
 }
 
 @media (max-width: 800px) {
