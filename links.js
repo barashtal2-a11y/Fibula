@@ -1,4 +1,4 @@
-// Central place to manage Fibula's platform links.
+// Central place to manage Barash's platform links.
 // Add a new platform by pushing another object here — the UI renders from this array.
 const FIBULA_LINKS = [
   {
