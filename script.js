@@ -2,7 +2,7 @@ function renderLinks(section, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const links = FIBULA_LINKS.filter((link) => link.section === section && !link.follow);
+  const links = FIBULA_LINKS.filter((link) => link.section === section && !link.follow && !link.hidden);
 
   links.forEach((link) => {
     const a = document.createElement("a");
@@ -19,7 +19,7 @@ function renderFollowCards(section, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const links = FIBULA_LINKS.filter((link) => link.section === section && link.follow);
+  const links = FIBULA_LINKS.filter((link) => link.section === section && link.follow && !link.hidden);
 
   links.forEach((link) => {
     const a = document.createElement("a");

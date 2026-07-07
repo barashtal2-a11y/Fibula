@@ -5,7 +5,8 @@ const FIBULA_LINKS = [
     name: "SoundCloud",
     url: "https://soundcloud.com/user831416870",
     section: "listen",
-    icon: "soundcloud"
+    icon: "soundcloud",
+    hidden: true // set to false (or delete this line) to show SoundCloud again
   },
   {
     name: "Instagram",
